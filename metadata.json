@@ -1,0 +1,6 @@
+{
+  "name": "Góc Vẽ Tranh - Lớp 1",
+  "description": "Ứng dụng vẽ tranh trực quan, đơn giản dành cho học sinh lớp 1, không cần đăng nhập hay điền thông tin cá nhân.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

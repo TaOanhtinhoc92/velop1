@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Prevent touch callouts and rubber-banding for smooth kid drawing */
+  .touch-none {
+    touch-action: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+/* Custom Print Styles for A4 2x2 Grid Output */
+@media print {
+  @page {
+    size: auto;
+    margin: 8mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Strictly hide everything not marked for printing */
+  .no-print,
+  nav,
+  header,
+  aside,
+  button,
+  .print-controls,
+  #app-navigation,
+  .teacher-dashboard-ui {
+    display: none !important;
+  }
+
+  .print-area-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-sheet {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: 98vh !important;
+    box-sizing: border-box !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    background: #ffffff !important;
+    padding: 2mm !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .print-sheet:last-of-type {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .print-grid-2x2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 5mm !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .print-card-cell {
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 4px !important;
+    padding: 3mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .print-image-container {
+    flex: 1 1 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 0 !important;
+  }
+
+  .print-drawing-image {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+}
